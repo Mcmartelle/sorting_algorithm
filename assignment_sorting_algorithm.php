@@ -2,21 +2,24 @@
 function sorting($array)
 {
 	$arr = $array;
+	$counter = 0;
 	for ($i=0; $i < count($arr)/2; $i++) { 
 		for ($k=count($arr)-$i-1; $k >= $i; $k--) { 
 			if ($arr[$i] > $arr[$k]) {
 				$swap = $arr[$i];
 				$arr[$i]=$arr[$k];
 				$arr[$k]=$swap;
+				$counter++;
 			}
 			else if ($arr[count($arr)-$i-1] < $arr[$k]) {
 				$swap = $arr[count($arr)-$i-1];
 				$arr[count($arr)-$i-1]=$arr[$k];
 				$arr[$k]=$swap;
+				$counter++;
 			}
 		}
 	}
-
+	echo "$counter if or else if statements were run for this sorting algorithm. <br>";
 	return $arr;
 }
 $test = array();
